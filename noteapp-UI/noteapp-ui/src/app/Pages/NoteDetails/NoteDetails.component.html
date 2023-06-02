@@ -1,0 +1,37 @@
+<div class="form-container">
+
+	<form #noteForm="ngForm" (ngSubmit)="onSubmit(noteForm)">
+		<div class="field">
+
+			<label class="label">タイトル</label>
+
+			<div class="control">
+				<input type="text" name="title" [ngModel]="note.title" required
+					class="input">
+			</div>
+
+		</div>
+		<br>
+		<div class="field">
+			<label class="label">説明</label>
+			<div class="control">
+				<textarea class="textarea" name="description"
+					[ngModel]="note.description"></textarea>
+			</div>
+
+		</div>
+		<div class="field is-grouped is-pulled-right">
+			<div class="control">
+				<button class="button is-text" type="button" (click)="cancel()">キャンセル</button>
+			</div>
+			<div class="control">
+				<button class="button is-success" type="submit"
+					[disabled]="!noteForm.valid">保存</button>
+
+			</div>
+
+		</div>
+
+	</form>
+
+</div>

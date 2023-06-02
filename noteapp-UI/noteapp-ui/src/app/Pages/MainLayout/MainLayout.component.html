@@ -1,0 +1,11 @@
+<div class="layout-box">
+
+  <div class="top-bar">
+    <h1>Note App</h1>
+    <h3 class="auth-btn" (click)="isAuthenticated()">{{ authButtonText }}</h3>
+  </div>
+
+  <div *ngIf="isLoggedIn" class="page-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
