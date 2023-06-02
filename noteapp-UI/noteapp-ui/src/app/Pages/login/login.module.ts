@@ -10,7 +10,6 @@ function initializeKeycloak(keycloak: KeycloakService) {
         url: 'http://20.195.104.123:8080/auth',
         realm: 'noteappdemo',
         clientId: 'noteapp-demo',
-        
       },
       initOptions: {
         onLoad: 'check-sso',
@@ -21,18 +20,14 @@ function initializeKeycloak(keycloak: KeycloakService) {
 }
 
 @NgModule({
-  declarations: [
-    KeycloakAuthComponent
-  ],
-  imports: [
-    CommonModule
-  ],
-  providers: [
-    {
-      provide: APP_INITIALIZER,
-      useFactory: initializeKeycloak,
-      multi: true,
-      deps: [KeycloakService],
-    }],
+  declarations: [KeycloakAuthComponent],
+  imports: [CommonModule],
+  // providers: [
+  //   {
+  //     provide: APP_INITIALIZER,
+  //     useFactory: initializeKeycloak,
+  //     multi: true,
+  //     deps: [KeycloakService],
+  //   }],
 })
-export class LoginModule { }
+export class LoginModule {}
